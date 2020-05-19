@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+.missing {
+  font-size: 1.2rem;
+  width: 20rem;
+}
+
+.video {
+  &__container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(26, 26, 26);
+    &--settings {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 20rem;
+      height: 7.5rem;
+      background-color: rgb(56, 56, 56);
+      color: white;
+      margin-bottom: 0.3rem;
+      margin-right: 0.5rem;
+      & > div {
+        display: flex;
+        flex-direction: row;
+        font-size: 1rem;
+        margin-top: 1rem;
+        position: relative;
+        z-index: 15;
+        & > p:first-child {
+          width: 70%;
+          margin-left: 5%;
+        }
+        & > p {
+          & > img {
+            position: absolute;
+            padding-top: 0.25rem;
+          }
+        }
+        & > p:last-child {
+          cursor: pointer;
+          & > span {
+            display: inline-block;
+            width: 3.2rem;
+          }
+        }
+      }
+    }
+    &--speed {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 20rem;
+      height: 16.5rem;
+      background-color: rgb(56, 56, 56);
+      color: white;
+      margin-bottom: 0.3rem;
+      margin-right: 0.5rem;
+      & > div:first-child {
+        border-bottom: 1px solid white;
+        display: flex;
+        flex-direction: row;
+        font-size: 1rem;
+        margin-top: 1rem;
+        position: relative;
+        z-index: 15;
+        width: 100%;
+        cursor: pointer;
+        & > p:first-child {
+          width: 100%;
+          padding-left: 5%;
+          height: 2rem;
+          & > img {
+            position: absolute;
+            padding-top: 0.25rem;
+          }
+          & > span {
+            margin-left: 1.5rem;
+            display: inline-block;
+          }
+        }
+      }
+      & > div:last-child {
+        display: flex;
+        flex-direction: column;
+        height: 13.5rem;
+        position: relative;
+        z-index: 16;
+        & > p {
+          margin-left: 2.6rem;
+          margin-top: 0.5rem;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+    }
+    &--quality {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 20rem;
+      height: 13.5rem;
+      background-color: rgb(56, 56, 56);
+      color: white;
+      margin-bottom: 0.3rem;
+      margin-right: 0.5rem;
+      & > div:first-child {
+        border-bottom: 1px solid white;
+        display: flex;
+        flex-direction: row;
+        font-size: 1rem;
+        margin-top: 1rem;
+        position: relative;
+        z-index: 15;
+        width: 100%;
+        cursor: pointer;
+        & > p:first-child {
+          width: 100%;
+          padding-left: 5%;
+          height: 2rem;
+          & > img {
+            position: absolute;
+            padding-top: 0.25rem;
+          }
+          & > span {
+            margin-left: 1.5rem;
+            display: inline-block;
+          }
+        }
+      }
+      & > div:last-child {
+        display: flex;
+        flex-direction: column;
+        height: 10.5rem;
+        position: relative;
+        z-index: 16;
+        & > p {
+          margin-left: 2.6rem;
+          margin-top: 0.5rem;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+    }
+    &--timedisplay {
+      & > span {
+        display: flex;
+        flex-direction: row;
+        background: rgb(248, 14, 1);
+        width:1.5%;
+        height:4px;
+        position: relative;
+        z-index: 5;
+      }
+    }
+    & > video {
+      height: 100%;
+      width: 100%;
+      background-color: rgb(26, 26, 26);
+      margin: 0 auto;
+    }
+    & > input {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 2px;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      z-index: 4;
+      margin-top: -4px;
+    }
+    
+    & > input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 13px;
+      height: 13px;
+      background: rgb(248, 14, 1);
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    & > input::-moz-range-thumb {
+      appearance: none;
+      width: 13px;
+      height: 13px;
+      background: rgb(248, 14, 1);
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    input[type=range]::-ms-thumb {
+      appearance: none;
+      width: 13px;
+      height: 13px;
+      background: rgb(248, 14, 1);
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    &--controls {
+      background-color: rgb(26, 26, 26);
+      width: 98%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 2rem;
+      padding-left: 1%;
+      padding-right: 1%;
+      &-left, &-right {
+        & > img {
+          height: 100%;
+          width: 30px;
+          cursor: pointer;
+        }
+      }
+      &-right {
+        & > img {
+          margin-right: 0.5rem;
+        }
+      }
+      &-left {
+        display: flex;
+        flex-direction: row;
+        &-volume {
+          & > img {
+            height: 100%;
+            width: 30px;
+            cursor: pointer;
+          }
+          & > input {
+            background-color: red;
+            margin-left: 0.5rem;
+            height: 100%;
+            width: 5rem;
+            cursor: pointer;
+          }
+          & > input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 13px;
+            height: 13px;
+            background: rgb(248, 14, 1);
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+          }
+        }
+        & > span {
+          color: white;
+          height: 100%;
+          margin-top: 0.25rem;
+          font-size: 1.2rem;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 20px;
+  margin-right: 0.25rem;
+  z-index: 10;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
