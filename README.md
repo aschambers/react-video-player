@@ -12,8 +12,6 @@
 ### Option properties
 1. trackColor: this will style the video track
 
-Example: <VideoPlayer video={video} type='video/mp4' videoWidth='20rem' videoHeight='20rem' trackColor='rgb(248, 14, 1)' />
-
 ### Notes:
 1. Make sure to install version >= 0.2.4, or this module will not work.
 3. If you would like to style the thumb for the video track you will need to use !important to override the style. For example, on chrome the style would be:
