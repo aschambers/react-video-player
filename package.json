@@ -1,13 +1,13 @@
 {
   "name": "reactjs-video-player",
-  "version": "0.1.2",
+  "version": "0.2.4",
   "private": false,
   "license": "(ISC OR GPL-3.0)",
-  "main": "dist/index.js",
+  "main": "./index.js",
   "module": "dist/index.js",
   "babel": {
     "presets": [
-      "@babel/react"
+      "@babel/preset-react"
     ]
   },
   "repository": {
@@ -30,9 +30,9 @@
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
-    "publish:npm": "SET NODE_ENV=production && if exist dist rmdir /s /q dist && mkdir dist && npx babel src/videoPlayer --out-dir dist --copy-files",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish:npm": "rm -rf dist && mkdir dist && babel src/VideoPlayer -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4"
+    "@babel/cli": "^7.8.4",
+    "@babel/preset-react": "^7.9.4"
   }
 }
