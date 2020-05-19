@@ -1,7 +1,8 @@
 ### Using this module
 
 ### How to use
-1. import VideoPlayer from 'reactjs-video-player';
+1. npm install reactjs-video-player@0.2.4
+2. import VideoPlayer from 'reactjs-video-player';
 
 ### Required properties
 1. video: the source for the video
