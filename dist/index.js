@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './VideoPlayer.css';
-import play from './assets/images/play.png';
-import pause from './assets/images/pause.png';
-import mute from './assets/images/mute.png';
-import volume from './assets/images/volume.png';
-import settings from './assets/images/settings.png';
-import defaultView from './assets/images/default.png';
-import expandView from './assets/images/enlarge.png';
-import normalView from './assets/images/normal.png';
-import right from './assets/images/right.png';
-import left from './assets/images/left.png';
+import play from '../assets/images/play.png';
+import pause from '../assets/images/pause.png';
+import mute from '../assets/images/mute.png';
+import volume from '../assets/images/volume.png';
+import settings from '../assets/images/settings.png';
+import defaultView from '../assets/images/default.png';
+import expandView from '../assets/images/enlarge.png';
+import normalView from '../assets/images/normal.png';
+import right from '../assets/images/right.png';
+import left from '../assets/images/left.png';
 
 const VideoPlayer = props => {
   const [player, setPlayer] = useState(null);
@@ -30,7 +30,8 @@ const VideoPlayer = props => {
   const [quality, setQuality] = useState('720p');
   const [autoplay, setAutoplay] = useState(false);
   const [menu, showMenu] = useState(null);
-  const [previousWidth, setPreviousWidth] = useState('60%');
+  const [previousWidth, setPreviousWidth] = useState(props.videoWidth ? props.videoWidth : '60%');
+  const [previousHeight, setPreviousHeight] = useState(props.videoHeight ? props.videoHeight : '30rem');
   /**
    * Set display properties for the video passed in when
    * the video has loaded.
@@ -189,7 +190,9 @@ const VideoPlayer = props => {
     setView('expanded');
     const container = document.getElementById('videocontainer');
     const currentWidth = container.style.width;
+    const currentHeight = container.style.width;
     setPreviousWidth(currentWidth);
+    setPreviousHeight(currentHeight);
     container.style.position = 'absolute';
     container.style.zIndex = '999';
     container.style.top = '0';
@@ -220,7 +223,7 @@ const VideoPlayer = props => {
     const container = document.getElementById('videocontainer');
     container.attributeStyleMap.clear();
     container.style.width = previousWidth;
-    container.style.height = '30rem';
+    container.style.height = previousHeight;
     const videoPlayer = document.getElementById('video_player');
     videoPlayer.attributeStyleMap.clear();
     const videoControls = document.getElementById('video_controls');
