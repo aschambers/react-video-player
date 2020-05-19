@@ -1,4 +1,4 @@
-### Using this React video player
+### Using this module
 
 ### Required properties
 1. video: the source for the video
